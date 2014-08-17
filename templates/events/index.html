@@ -1,10 +1,4 @@
-{% extends 'layout.html' %}
-{% set active_page = "eventManager" %}
-
-
-{% block head %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/typeaheadjs.css') }}">
-{% endblock %}
+{% extends 'events/layout.html' %}
 
 {% block content %}
   <h1>Event Manager</h1>
@@ -57,9 +51,4 @@
     <span class="glyphicon glyphicon-plus"></span>
     Create a new event
   </a>
-{% endblock %}
-
-{% block scripts %}
-<script src="{{ url_for('static', filename='vendor/typeahead.jquery.js') }}"></script>
-<script src="{{ url_for('static', filename='js/geo-finder.js') }}"></script>
 {% endblock %}
