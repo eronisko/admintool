@@ -38,6 +38,7 @@ class Event(Base):
     attendance = Column(Integer)
 
     site = relationship('Site', backref=backref('events'))
+    tasks = relationship('Task', cascade="all, delete, delete-orphan")
 
 class Person(Base):
     __tablename__ = 'Person'
@@ -60,7 +61,6 @@ class Task(Base):
                        nullable=False, primary_key=True)
     role = Column('task', Text, nullable=False, primary_key=True)
 
-    event = relationship('Event', backref=backref('tasks'))
     person = relationship('Person', backref=backref('tasks'))
 
 # TODO: Cohort

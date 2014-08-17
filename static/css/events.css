@@ -1,0 +1,7 @@
+form.destroy .btn-link {
+  color: #a94442;
+}
+
+form.destroy {
+  float: right;
+}

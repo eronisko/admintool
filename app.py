@@ -166,6 +166,15 @@ def update_event(id):
     else:
         return render_template('events/edit.html', event=event, form=form)
 
+@app.route('/events/<id>/delete', methods=['POST'])
+def delete_event(id):
+    db_session = db.get_session()
+    event = db_session.query(Event).get(id)
+
+    db_session.delete(event)
+    db_session.commit()
+    flash('The event has been deleted.','alert-success')
+    return redirect('events')
 ###
 
 def create_dbs():

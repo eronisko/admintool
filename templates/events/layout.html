@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 {% set active_page = "eventManager" %}
 {% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/events.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/typeaheadjs.css') }}">
 {% endblock %}
 
@@ -8,6 +9,6 @@
 {% endblock %}
 
 {% block scripts %}
+<script src="{{ url_for('static', filename='js/events.js') }}"></script>
 <script src="{{ url_for('static', filename='vendor/typeahead.jquery.js') }}"></script>
-<script src="{{ url_for('static', filename='js/geo-finder.js') }}"></script>
 {% endblock %}

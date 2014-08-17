@@ -3,4 +3,8 @@
 {% block content %}
 <h1>Editing {{ event.id }}</h2>
 {% include 'events/_form.html' %}
+
+<form method="post" class="destroy" action="{{ url_for('delete_event', id=event.id) }}">
+  <input class="btn btn-link" type="submit" value="Delete Event" />
+</form>
 {% endblock %}
